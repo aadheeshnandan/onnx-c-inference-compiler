@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/aadheeshnandan/Developer/MLCompiler/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -129,6 +139,32 @@ mlc/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlc.dir/build.make CMakeFiles/mlc.dir/build
 .PHONY : mlc/fast
 
+#=============================================================================
+# Target rules for targets named unity
+
+# Build rule for target.
+unity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unity
+.PHONY : unity
+
+# fast build rule for target.
+unity/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/build
+.PHONY : unity/fast
+
+#=============================================================================
+# Target rules for targets named test_hello
+
+# Build rule for target.
+test_hello: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hello
+.PHONY : test_hello
+
+# fast build rule for target.
+test_hello/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hello.dir/build.make CMakeFiles/test_hello.dir/build
+.PHONY : test_hello/fast
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -153,6 +189,54 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mlc.dir/build.make CMakeFiles/mlc.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+tests/test_hello.o: tests/test_hello.c.o
+.PHONY : tests/test_hello.o
+
+# target to build an object file
+tests/test_hello.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hello.dir/build.make CMakeFiles/test_hello.dir/tests/test_hello.c.o
+.PHONY : tests/test_hello.c.o
+
+tests/test_hello.i: tests/test_hello.c.i
+.PHONY : tests/test_hello.i
+
+# target to preprocess a source file
+tests/test_hello.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hello.dir/build.make CMakeFiles/test_hello.dir/tests/test_hello.c.i
+.PHONY : tests/test_hello.c.i
+
+tests/test_hello.s: tests/test_hello.c.s
+.PHONY : tests/test_hello.s
+
+# target to generate assembly for a file
+tests/test_hello.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hello.dir/build.make CMakeFiles/test_hello.dir/tests/test_hello.c.s
+.PHONY : tests/test_hello.c.s
+
+tests/unity/unity.o: tests/unity/unity.c.o
+.PHONY : tests/unity/unity.o
+
+# target to build an object file
+tests/unity/unity.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/tests/unity/unity.c.o
+.PHONY : tests/unity/unity.c.o
+
+tests/unity/unity.i: tests/unity/unity.c.i
+.PHONY : tests/unity/unity.i
+
+# target to preprocess a source file
+tests/unity/unity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/tests/unity/unity.c.i
+.PHONY : tests/unity/unity.c.i
+
+tests/unity/unity.s: tests/unity/unity.c.s
+.PHONY : tests/unity/unity.s
+
+# target to generate assembly for a file
+tests/unity/unity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/tests/unity/unity.c.s
+.PHONY : tests/unity/unity.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -161,10 +245,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... mlc"
+	@echo "... test_hello"
+	@echo "... unity"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... tests/test_hello.o"
+	@echo "... tests/test_hello.i"
+	@echo "... tests/test_hello.s"
+	@echo "... tests/unity/unity.o"
+	@echo "... tests/unity/unity.i"
+	@echo "... tests/unity/unity.s"
 .PHONY : help
 
 

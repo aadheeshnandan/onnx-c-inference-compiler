@@ -1,3 +1,6 @@
 /Users/aadheeshnandan/Developer/MLCompiler/build/CMakeFiles/mlc.dir
+/Users/aadheeshnandan/Developer/MLCompiler/build/CMakeFiles/unity.dir
+/Users/aadheeshnandan/Developer/MLCompiler/build/CMakeFiles/test_hello.dir
+/Users/aadheeshnandan/Developer/MLCompiler/build/CMakeFiles/test.dir
 /Users/aadheeshnandan/Developer/MLCompiler/build/CMakeFiles/edit_cache.dir
 /Users/aadheeshnandan/Developer/MLCompiler/build/CMakeFiles/rebuild_cache.dir

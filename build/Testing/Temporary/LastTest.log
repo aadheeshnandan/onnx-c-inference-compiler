@@ -1,0 +1,24 @@
+Start testing: May 27 18:50 EDT
+----------------------------------------------------------
+1/1 Testing: hello_test
+1/1 Test: hello_test
+Command: "/Users/aadheeshnandan/Developer/MLCompiler/build/test_hello"
+Directory: /Users/aadheeshnandan/Developer/MLCompiler/build
+"hello_test" start time: May 27 18:50 EDT
+Output:
+----------------------------------------------------------
+/Users/aadheeshnandan/Developer/MLCompiler/tests/test_hello.c:18:test_addition_works:PASS
+/Users/aadheeshnandan/Developer/MLCompiler/tests/test_hello.c:19:test_strings_compare:PASS
+
+-----------------------
+2 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"hello_test" end time: May 27 18:50 EDT
+"hello_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 27 18:50 EDT
